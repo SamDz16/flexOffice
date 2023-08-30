@@ -1,0 +1,35 @@
+<apex:page standardController="Reservation__c" extensions="ReservationPdfController" renderAs="pdf">
+    <apex:pageBlock title="List of Today's reservations">
+        <apex:pageBlockTable value="{!reservations}" var="reservation" cellspacing="5px" cellpadding="5px" style="border-collapse: collapse">
+            <apex:column style="border: 1px solid #000" value="{!reservation.Id}" />
+            <apex:column headerValue="Nom Réservation" style="border: 1px solid #000" value="{!reservation.Name}" />
+            <apex:column headerValue="Date Réservation" style="border: 1px solid #000" value="{!reservation.Reservation_Date__c}" />
+            <apex:column headerValue="Nom Table" style="border: 1px solid #000" value="{!reservation.Table__r.Name}" />
+            <apex:column headerValue="Nom Salle" style="border: 1px solid #000" value="{!reservation.Table__r.Salle__r.Name}" />
+            <apex:column headerValue="Annulée ?" style="border: 1px solid #000" value="{!reservation.Is_Reservation_Cancelled__c}" />
+            <apex:column headerValue="Créée par" style="border: 1px solid #000" value="{!reservation.Owner.Name}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- <h1 style="text-align: center;">Reservation List</h1>
+    <table style="border: 1px solid #000; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid #000; padding: 5px">Nom Réservation</th>
+            <th style="border: 1px solid #000; padding: 5px">Date Réservation</th>
+            <th style="border: 1px solid #000; padding: 5px">Nom Table</th>
+            <th style="border: 1px solid #000; padding: 5px">Nom Salle</th>
+            <th style="border: 1px solid #000; padding: 5px">Annulée ?</th>
+            <th style="border: 1px solid #000; padding: 5px">Créée par</th>
+        </tr>
+        <apex:repeat value="{!reservations}" var="reservation">
+            <tr>
+                <td style="border: 1px solid #000">{!reservation.Name}</td>
+                <td style="border: 1px solid #000">{!reservation.Reservation_Date__c}</td>
+                <td style="border: 1px solid #000">{!reservation.Table__r.Name}</td>
+                <td style="border: 1px solid #000">{!reservation.Table__r.Salle__r.Name}</td>
+                <td style="border: 1px solid #000">{!reservation.Is_Reservation_Cancelled__c}</td>
+                <td style="border: 1px solid #000">{!reservation.Owner.Name}</td>
+            </tr>
+        </apex:repeat>
+    </table> -->
+</apex:page>

@@ -1,0 +1,12 @@
+<template>
+    <template if:true={recordIdToUpdate}>
+        <lightning-card title="Update Existing Reservation">
+            <div class="slds-m-around_medium">
+        
+                <lightning-record-form object-api-name="Reservation__c" record-id={recordIdToUpdate} fields={fields} mode="edit"
+                    onsuccess={handleSuccessUpdate}>
+                </lightning-record-form>
+            </div>
+        </lightning-card>
+    </template>
+</template>

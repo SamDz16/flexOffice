@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Reservation Filter Manager">
+        
+        <!-- Rservation Filter Manager Component -->
+        <c-reservation-filter-manager onfilter={selectedOptionHandler}></c-reservation-filter-manager>
+
+        <!-- Reservation List Manager Component -->
+        <c-reservation-list-manager filter={selectedOption}></c-reservation-list-manager>
+    </lightning-card>
+</template>

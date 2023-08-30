@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Rservation List Manager" >
+        <div class="slds-m-around_medium slds-align_absolute-center">
+            <lightning-button label="Generate PDF for reservations" onclick={generatePDF}>
+            </lightning-button>
+        </div>
+
+        <div class="slds-m-around_medium">
+            <template if:false={error}>
+                <lightning-datatable 
+                    key-field="Id" 
+                    data={reservations} 
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column="true"
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={recordIdToUpdate}>
+
+    </template>
+
+</template>

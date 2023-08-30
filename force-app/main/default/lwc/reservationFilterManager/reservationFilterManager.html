@@ -1,0 +1,13 @@
+<template>
+    <lightning-layout horizontal-align="space">
+        <lightning-layout-item>
+            <p>
+                <lightning-formatted-text value="Reservation Filter"></lightning-formatted-text>
+            </p>
+            <div>
+                <lightning-combobox name="filter" value={selectedOption} label="Reservation Filter" options={options}
+                onchange={handleChange} variant="label-hidden"></lightning-combobox>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
